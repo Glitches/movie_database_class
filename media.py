@@ -9,6 +9,7 @@
 import webbrowser
 
 class Archive():
+
     def __init__(self, title, poster_image, release_date_year):
         self.title = title
         self.poster_image_url = poster_image
