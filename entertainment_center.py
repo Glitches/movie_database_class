@@ -30,8 +30,7 @@ giu_la_testa = media.Movie("Giu la testa",
 						   "http://www.ossinotizie.it/wp-content/uploads/2014/09/Gi%C3%B9-la-testa.jpg",
 						   "1971",
    						   "Un fuorilegge messicano, Juan Miranda, associatosi a un irlandese, Sean Mallory, per svaligiare una banca, si ritrova a combattere al suo fianco con i rivoltosi di Villa e Zapata.",
-						   "https://www.youtube.com/watch?v=S4ELWDFAZfs",
-)
+						   "https://www.youtube.com/watch?v=S4ELWDFAZfs")
 
 i_soliti_ignoti = media.Movie("I soliti ignoti",
 							  "https://arenatoppeghen.files.wordpress.com/2015/03/i_soliti_ignoti.jpg",
@@ -42,4 +41,11 @@ i_soliti_ignoti = media.Movie("I soliti ignoti",
 
 movies = [frankestein_junior, kill_bill, giu_la_testa, i_soliti_ignoti]
 
-fresh_tomatoes.open_movies_page(movies)
+animals = media.Vynil("Animals",
+					  "http://assets.catawiki.nl/assets/2015/9/11/5/8/7/58752714-5871-11e5-93f7-1a1758b04f1b.jpg",
+					  "1975",
+					  "Pink Floyd")
+					  
+albums = [animals]
+
+fresh_tomatoes.open_movies_page(movies, albums)
