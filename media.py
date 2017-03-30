@@ -26,3 +26,11 @@ class Movie(Archive):
 
     def show_trailer(self):
         webbrowser.open(self.trailer_youtube_url)
+
+class Vynil(Archive):
+    # This class provides a way to store info related to music Vynils
+
+    def __init__(self,title, poster_image, release_date_year, author):
+        # initialize instance of class Vynil
+        Archive.__init__(self, title, poster_image, release_date_year)
+        self.author = author
