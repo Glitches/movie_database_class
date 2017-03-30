@@ -8,8 +8,21 @@
 
 import webbrowser
 
-class Movie():
+class Archive():
+
+    def __init__(self, title, poster_image, release_date_year):
+        self.title = title
+        self.poster_image_url = poster_image
+        self.release_date = release_date_year
+
+class Movie(Archive):
     # This class provides a way to store movie related information
 
-    def __init__(self):
+    def __init__(self, title, poster_image, release_date_year, movie_storyline, trailer_youtube):
         # initialize instance of class Movie
+        Archive.__init__(self, title, poster_image, release_date_year)
+        self.storyline = movie_storyline
+        self.trailer_youtube_url = trailer_youtube
+
+    def show_trailer(self):
+        webbrowser.open(self.trailer_youtube_url)
