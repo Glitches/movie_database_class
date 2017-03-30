@@ -111,10 +111,7 @@ main_page_content = '''
       </div>
     </div>
     <div class="container">
-      {movie_tiles}
-    </div>
-    <div class="container">
-      {album_tiles}
+      {tiles}
     </div>
   </body>
 </html>
@@ -137,7 +134,7 @@ vynil_tile_content = '''
 '''
 
 
-def create_movie_tiles_content(movies, albums):
+def create_tiles_content(movies, albums):
     # The HTML content for this section of the page
     content = ''
     for movie in movies:
@@ -154,8 +151,8 @@ def create_movie_tiles_content(movies, albums):
         )
     for album in albums:
         # Extract the youtube ID from the url
-        youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
-        youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
+        youtube_id_match = re.search(r'(?<=v=)[^&#]+', album.music_youtube_url)
+        youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', album.music_youtube_url)
         trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
 
         # Append the tile for the movie with its content filled in
@@ -189,11 +186,9 @@ def open_movies_page(movies, albums):
   # Create or overwrite the output file
   output_file = open('fresh_tomatoes.html', 'w')
 
-  # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+  # Replace the placeholder for the movie and vynil tiles with the actual dynamically generated content
+  rendered_content = main_page_content.format(tiles=create_tiles_content(movies, albums))
 
-  # Replace the placeholder for the vynil tiles with the actual dynamically generated content
-  rendered_content_2 = main_page_content.format(album_tiles=create_vynil_tiles_content(albums))
 
   # Output the file
   output_file.write(main_page_head + rendered_content)

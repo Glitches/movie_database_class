@@ -44,8 +44,9 @@ movies = [frankestein_junior, kill_bill, giu_la_testa, i_soliti_ignoti]
 animals = media.Vynil("Animals",
 					  "http://assets.catawiki.nl/assets/2015/9/11/5/8/7/58752714-5871-11e5-93f7-1a1758b04f1b.jpg",
 					  "1975",
-					  "Pink Floyd")
-					  
+					  "Pink Floyd",
+					  "https://www.youtube.com/watch?v=gOqblSqx_VI")
+
 albums = [animals]
 
 fresh_tomatoes.open_movies_page(movies, albums)

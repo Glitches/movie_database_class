@@ -30,7 +30,8 @@ class Movie(Archive):
 class Vynil(Archive):
     # This class provides a way to store info related to music Vynils
 
-    def __init__(self, title, poster_image, release_date_year, author):
+    def __init__(self, title, poster_image, release_date_year, author, trailer_youtube):
         # initialize instance of class Vynil
         Archive.__init__(self, title, poster_image, release_date_year)
         self.author = author
+        self.music_youtube_url = trailer_youtube
