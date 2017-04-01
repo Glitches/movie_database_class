@@ -12,7 +12,7 @@ class Archive(object):
     """Provide a way to store common information for both movies and vynils"""
 
     def __init__(self, title, poster_image, release_date_year):
-        """Link each argument with appropriate method"""
+        """Append each given argument with appropriate method"""
         self.title = title
         self.poster_image_url = poster_image
         self.release_date = release_date_year
@@ -21,7 +21,7 @@ class Movie(Archive):
     """Provides a way to store movie related informations"""
 
     def __init__(self, title, poster_image, release_date_year, movie_director, trailer_youtube):
-        """Link each argument with appropriate method"""
+        """Append each given argument with appropriate method"""
         Archive.__init__(self, title, poster_image, release_date_year)
         """Initialize Archive instance"""
         self.director = movie_director
@@ -34,7 +34,7 @@ class Vynil(Archive):
     """Provide a way to store info related to music Vynils"""
 
     def __init__(self, title, poster_image, release_date_year, author, trailer_youtube):
-        """Link each argument with appropriate method"""
+        """Append each given argument with appropriate method"""
         Archive.__init__(self, title, poster_image, release_date_year)
         """Initialize Archive instance"""
         self.author = author
