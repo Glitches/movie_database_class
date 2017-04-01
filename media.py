@@ -8,7 +8,7 @@
 
 import webbrowser
 
-class Archive(Object):
+class Archive(object):
     """Provide a way to store common information for both movies and vynils"""
 
     def __init__(self, title, poster_image, release_date_year):
