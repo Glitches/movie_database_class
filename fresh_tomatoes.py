@@ -129,7 +129,7 @@ movie_tile_content = '''
 
 # A single vynil entry html template
 vynil_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{single_youtube}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="320" height="442">
     <h2>{album_title}</h2>
     <p><i>{album_release_date}</i></p>
@@ -159,7 +159,7 @@ def create_tiles_content(movies, albums):
         # Extract the youtube ID from the url
         youtube_id_match = re.search(r'(?<=v=)[^&#]+', album.music_youtube_url)
         youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', album.music_youtube_url)
-        trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
+        single_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
 
         # Append the tile for the movie with its content filled in
         content += vynil_tile_content.format(
@@ -167,7 +167,7 @@ def create_tiles_content(movies, albums):
             poster_image_url=album.poster_image_url,
             album_author=album.author,
             album_release_date=album.release_date,
-            trailer_youtube_id=trailer_youtube_id
+            single_youtube=single_youtube_id
         )
     return content
 
