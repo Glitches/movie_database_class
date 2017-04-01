@@ -18,10 +18,10 @@ class Archive():
 class Movie(Archive):
     # This class provides a way to store movie related information
 
-    def __init__(self, title, poster_image, release_date_year, movie_storyline, trailer_youtube):
+    def __init__(self, title, poster_image, release_date_year, movie_director, trailer_youtube):
         # initialize instance of class Movie
         Archive.__init__(self, title, poster_image, release_date_year)
-        self.storyline = movie_storyline
+        self.director = movie_director
         self.trailer_youtube_url = trailer_youtube
 
     def show_trailer(self):
